@@ -40,18 +40,18 @@ pretrained_path: speechbrain/asr-crdnn-rnnlm-librispeech
 
 # Path where data manifest files will be stored. The data manifest files are created by the
 # data preparation script
-train_annotation: ../train.json
-valid_annotation: ../valid.json
-test_annotation: ../test.json
+train_annotation: ../../../data/train.json
+valid_annotation: ../../../data/valid.json
+test_annotation: ../../../data/test.json
 
 # The train logger writes training statistics to a file, as well as stdout.
 train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
     save_file: !ref <train_log>
 
 # Training parameters
-number_of_epochs: 15
+number_of_epochs: 1
 number_of_ctc_epochs: 5
-batch_size: 8
+batch_size: 4
 lr: 1.0
 ctc_weight: 0.5
 sorting: ascending
@@ -70,7 +70,7 @@ test_dataloader_opts:
 
 
 # Feature parameters
-sample_rate: 16000
+sample_rate: 48000
 n_fft: 400
 n_mels: 40
 
